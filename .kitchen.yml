@@ -1,6 +1,7 @@
 ---
 driver:
-  name: vagrant
+  name: docker
+  use_sudo: false
 
 provisioner:
   name: chef_zero
@@ -13,7 +14,7 @@ verifier:
   name: inspec
 
 platforms:
-  - name: ubuntu-17.10
+  - name: centos-6.9
 
 suites:
   - name: default
