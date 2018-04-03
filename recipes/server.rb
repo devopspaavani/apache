@@ -6,27 +6,21 @@
 
 package 'httpd'
 
+template '/var/www/html/index.html' do
+ source 'index.html.erb'
+end
+
+template '/etc/httpd/conf/httpd.conf' do
+  action :create
+  source 'httpd.conf.erb'
+  notifies :restart, 'service[httpd]'
+end
 
 service 'httpd' do
   action [:enable, :start]
 end
 
 
-template '/var/www/html/index.html' do
- source 'index.html.erb'
-end
-
-cookbook_file '/var/www/html/sample.html' do
-  source 'sample.txt'
-end
-
-remote_file '/var/www/html/metadata.html' do
-  source 'https://github.com/devopspaavani/apache/blob/master/metadata.rb'
-end
-
-template '/var/www/html/sample.txt' do
- source 'sample.txt.erb'
-end
 
 
 
