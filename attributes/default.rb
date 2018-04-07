@@ -1,2 +1,2 @@
 
-default['apache']['port'] = 8080
+default['apache']['port'] = 80
