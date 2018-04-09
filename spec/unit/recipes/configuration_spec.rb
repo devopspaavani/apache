@@ -6,9 +6,8 @@
 
 require 'spec_helper'
 
-describe 'apache::default' do
+describe 'apache::configuration' do
   
-
   context 'When all attributes are default, on CentOS 6.9' do
     let(:chef_run) do
       # for a complete list of available platforms and versions see:
@@ -20,19 +19,6 @@ describe 'apache::default' do
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
-
-    it 'includes the install recipe' do
-      expect(chef_run).to include_recipe('apache::install')
-    end 
-
-    it 'includes the configuration recipe' do
-      expect(chef_run).to include_recipe('apache::configuration')
-    end 
-  
-    it 'includes the service recipe' do
-      expect(chef_run).to include_recipe('apache::service')
-    end 
-
-
+    
   end
 end
