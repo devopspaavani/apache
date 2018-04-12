@@ -4,8 +4,11 @@
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
+require 'pry'
 
-template '/var/www/html/index.html' do
+
+
+template node['apache']['document_root'] + 'index.html' do
   source 'index.html.erb'
 end
 

@@ -4,4 +4,7 @@
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
-package 'httpd'
+require 'pry'
+
+
+package node['apache']['package_name']

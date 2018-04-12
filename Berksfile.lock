@@ -4,4 +4,4 @@ DEPENDENCIES
     metadata: true
 
 GRAPH
-  apache (0.3.3)
+  apache (0.4.0)
